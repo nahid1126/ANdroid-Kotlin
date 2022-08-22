@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.row_item.view.*
 
@@ -21,6 +22,14 @@ class UserAdapter(private val context: Context, private var userList: ArrayList<
         holder.txtId.text = "ID : ${userModel.id}"
         holder.txtName.text = "Name : ${userModel.name}"
         holder.txtAge.text = "Age : ${userModel.age}"
+
+        holder.itemView.setOnClickListener {
+            Toast.makeText(
+                context,
+                "$position",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 
     override fun getItemCount(): Int {
