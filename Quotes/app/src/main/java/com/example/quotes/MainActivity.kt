@@ -29,17 +29,17 @@ class MainActivity : AppCompatActivity() {
 
     fun onShare(view: View) {
         val intent = Intent(Intent.ACTION_SEND)
-        intent.setType("text/plain")
+        intent.type = "text/plain"
         intent.putExtra(Intent.EXTRA_TEXT, mainViewModel.getQuotes().text)
         startActivity(intent)
     }
 
     fun onPrevious(view: View) {
-        mainViewModel.previousQuotes()
+        setQuote(mainViewModel.previousQuotes())
     }
 
     fun onNext(view: View) {
-        mainViewModel.nextQuotes()
+        setQuote(mainViewModel.nextQuotes())
     }
 
     private fun setQuote(quotes: Quotes) {
