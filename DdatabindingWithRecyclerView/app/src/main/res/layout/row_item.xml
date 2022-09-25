@@ -3,9 +3,21 @@
 
     <data>
 
+        <import type="com.example.ddatabindingwithrecyclerview.User" />
+
+        <import type="android.view.View.OnClickListener" />
+
         <variable
             name="user"
-            type="com.example.ddatabindingwithrecyclerview.User" />
+            type="User" />
+
+        <variable
+            name="submitClickListener"
+            type="OnClickListener" />
+
+        <variable
+            name="cancelClickListener"
+            type="OnClickListener" />
     </data>
 
     <LinearLayout
@@ -30,5 +42,12 @@
             android:text="@{`Name : `+user.name}"
             android:textAlignment="center"
             android:textSize="18sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Click Me"
+            android:onClick="@{submitClickListener}"/>
     </LinearLayout>
 </layout>
